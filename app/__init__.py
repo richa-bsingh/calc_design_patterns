@@ -4,12 +4,24 @@ import importlib
 from app.commands import CommandHandler, Command
 from app.plugins.menu import MenuCommand
 import logging
+from dotenv import load_dotenv
 
 class App:
     def __init__(self):  # Constructor
+        load_dotenv()
+        self.settings = self.load_environment_variables()
+        self.settings.setdefault('ENVIRONMENT', 'PRODUCTION')   
         os.makedirs('logs', exist_ok=True)  # Ensure the logs directory exists
         self.configure_logging()
         self.command_handler = CommandHandler()
+    
+    def load_environment_variables(self):
+        settings = {key: value for key, value in os.environ.items()}
+        logging.info("Environment variables loaded.")
+        return settings
+
+    def get_environment_variable(self, env_var: str = 'ENVIRONMENT'):
+        return self.settings.get(env_var, None)
 
     def configure_logging(self):
         log_file_path = 'logs/app.log'
@@ -70,8 +82,8 @@ class App:
                     logging.warning("Invalid selection. Please enter a valid number.")  # Logging warning
                     print("Invalid selection. Please enter a valid number.")  # User feedback
             except ValueError:
-                logging.error("Wrong input, only numbers are allowed.")  # Logging error
-                print("Wrong input, only numbers are allowed.")  # User feedback
+                logging.error("Only numbers are allowed, wrong input.")  # Logging error
+                print("Only numbers are allowed, wrong input.")  # User feedback
 
 if __name__ == "__main__":
     app = App()
