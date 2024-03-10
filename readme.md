@@ -1,4 +1,4 @@
-# Homework 5: Plugins
+# Homework 6: Logging and Devops
 
 ## Introduction
 
