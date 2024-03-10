@@ -1,23 +1,25 @@
 # Homework 6: Logging and Devops
 
+## Getting Ready for Production: Devops, Cloud Computing, Environment Variables, Logging, and Continuous Integration
+
 ## Introduction
+This homework has three new features.
 
-This project focuses on the development of an interactive command-line application that operates continuously, transitioning from a single-execution script to a fully functional application. Through this assignment, you will explore the command pattern, learn how to dynamically load commands using a simple plugin architecture, and understand the appropriate use of exceptions versus conditional statements to manage invalid data inputs. This unit lays the foundational skills for application development, preparing you for the midterm project, which requires a thorough explanation of your program's architecture, design patterns, and functionality.
+1.  GitHub Actions to run your tests on GitHub automatically. The github action is configured to trigger: log-devops and master.  
 
-## Project Enhancements from Assignment 4
+2.  Environment variables and it's test case for the app.
 
-Incorporate the functionalities discussed in the lecture videos to your previous assignment. This includes transforming your calculator program into an interactive application using the command pattern and REPL (Read, Evaluate, Print, Loop) principles.
+3.  Application logging for tracking application usage, security, and development and also logging related test cases.
 
-## Submissions
+## Project Enhancements from Assignment 5
 
-- **Testing :**
-  - Added test cases for dynamic plugin menu
-  - Added test cases for sub menu logic like for calculator
-![alt text](<Screenshot 2024-03-01 at 10.57.47 PM.png>)
+Added the above enhancements:
 
-- **Functionality :**
-  - Implementation of command pattern and REPL:
-![alt text](<Screenshot 2024-03-01 at 10.56.08 PM.png>)
+1. Added a GitHub action to project.
+![alt text](<Screenshot 2024-03-10 at 3.53.20 AM.png>)
 
-  - Implementation of interactive calculator commands (add, subtract, multiply, divide):
-![alt text](<Screenshot 2024-03-01 at 10.55.51 PM.png>)
+2. Added the .env file.
+![alt text](<Screenshot 2024-03-10 at 3.54.12 AM.png>)
+
+3. Added logging.
+![alt text](<Screenshot 2024-03-10 at 3.54.37 AM.png>)
